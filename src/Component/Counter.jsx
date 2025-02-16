@@ -12,11 +12,11 @@ function Counter(props){
     console.log(number)
  }
     return(
-        <div className='counter-wrapper'>
-            <p className="numbertext">Number:<span className="number">{number}</span></p>
-           <div className="button_container">
-           <button className="button" onClick={()=>Increasement()}>Increase</button>
-           <button className="button" onClick={()=>Decreasement()}>Decrease</button>  
+        <div className='bg-neutral-700 px-25 py-14 flex flex-col items-center gap-2'>
+            <p className="">Number:<span className="">{number}</span></p>
+           <div className="flex bg-red-400 flex gap-6">
+           <button className="bg-sky-300" onClick={()=>Increasement()}>Increase</button>
+           <button className="bg-sky-300" onClick={()=>Decreasement()}>Decrease</button>  
            </div>
         </div>
     )
