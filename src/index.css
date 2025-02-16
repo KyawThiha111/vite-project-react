@@ -1,9 +1,35 @@
- body{
+:root{
+  --primary_color:"red";
+}
+body{
   display:flex ;
   align-items: center;
   justify-content: center;
   background-color: black;
   height: 100vh;
+}
+
+.container{
+  background-color: rgb(152, 95, 54);
+  display: grid;
+  grid-template-columns:1fr 1fr 1fr ;
+  grid-template-rows: 100px 100px 100px 100px 100px;
+}/* 2 colums, the first column takes 2/3 of the whole area. */
+ /* 2 rows, the first row would take 200px and 100px for the second row. */
+
+.item1{
+   background-color: blueviolet;
+   width: 100px;
+}
+.item2{
+   background-color: rgb(211, 183, 25);
+   box-shadow: 2px 2px 3px 2px rgb(207, 207, 58);
+   grid-row: 3 / 4;
+   grid-column: 2 / 3;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   color: blanchedalmond
 }
 
 
