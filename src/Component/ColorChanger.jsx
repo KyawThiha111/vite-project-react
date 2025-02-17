@@ -1,5 +1,6 @@
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import CurrentColor from "./CurrentColor";
 const colors = ["bg-sky-500","bg-pink-500","bg-black"]
 function ColorChanger(){
  const [backgroundColor, setBackGroundColor] = useState("bg-black");
@@ -7,6 +8,10 @@ function ColorChanger(){
  const ChangeBackGround = (color)=>{
     setBackGroundColor(color)
  }
+
+ useEffect(()=>{
+    setBackGroundColor("bg-red-900")
+ },[backgroundColor])
  return(
     <section>
         <div className={`${backgroundColor} w-full h-[100vh] flex justify-center items-center`}>
@@ -22,6 +27,7 @@ function ColorChanger(){
                     )
                 })}
                </div>
+               <CurrentColor color={backgroundColor} ChangeBackGround={ChangeBackGround}/>
             </div>
         </div>
     </section>
