@@ -6,6 +6,8 @@ const useCurrencyExchanger = (baseCode,toCurrency,Amount)=>{
  const [error,setError] = useState(null);
  const [isLoading,setIsLoading] = useState(true);
  const [exchangedMoney,setExchangedMoney] = useState(1);
+ const [fromKeyArray,setFromKeyArray] = useState([]);
+ const [toKeyArray,setToKeyArray] = useState([])
   useEffect(()=>{
     
    const FetchAPI = async()=>{
@@ -19,6 +21,8 @@ const useCurrencyExchanger = (baseCode,toCurrency,Amount)=>{
     const conversion_rates =dataFetched.conversion_rates[toCurrency];
     console.log(conversion_rates);
     setExchangedMoney(Number(conversion_rates)*Number(Amount));
+    setFromKeyArray(Object.keys(dataFetched.conversion_rates));
+    setToKeyArray(Object.keys(dataFetched.conversion_rates));
     } catch (error) {
        setError(error) 
     }finally{
@@ -28,7 +32,7 @@ const useCurrencyExchanger = (baseCode,toCurrency,Amount)=>{
    FetchAPI();
   },[baseCode,toCurrency,Amount])
   
-   return {data,error,isLoading,exchangedMoney}
+   return {data,error,isLoading,exchangedMoney,fromKeyArray,toKeyArray}
 }
 
 export default useCurrencyExchanger;
