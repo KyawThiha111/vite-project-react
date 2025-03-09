@@ -3,25 +3,19 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './index.css';
 import React from 'react';
-import { createContext } from 'react';
-import  {Developer} from './Component/Developer';
-
-export const myContext = createContext(undefined);
-function App() {
-   const [developer,setDeveloper] = useState({
-    name:"Kyaw Thiha",
-    age:21,
-    skills:["Mern Stack","Python","mySQL"]
-   })
-   const handleSetDeveloperskills = (newData)=>{
-     setDeveloper({...developer,skills:[...developer.skills,newData]})
-   }
+import { BrowserRouter as Router, Routes,Route,Link } from 'react-router-dom';
+import { Home } from './Component/Home';
+import { PostPage } from './Component/PostPage';
+import { Navbar } from './Component/Navbar';
+function App() { 
    return(
-     <div>
-       <myContext.Provider value={{developer,handleSetDeveloperskills}}>
-       <Developer/>
-       </myContext.Provider>
-     </div>
+     <Router>
+      <Navbar/>
+      <Routes>
+        <Route path='/' element={<Home/>}/>
+        <Route path='/postpage' element={<PostPage/>}/>
+      </Routes>
+     </Router>
    )
 }
 
