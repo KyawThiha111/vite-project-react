@@ -2,8 +2,8 @@ import { Link } from "react-router-dom"
 
 export const Navbar = ()=>{
     return(
-        <nav>
-            <ul>
+        <nav className=" w-[20%] py-3">
+            <ul className="flex justify-around">
                 <li>
                     <Link to="/">Home Page</Link>
                 </li>

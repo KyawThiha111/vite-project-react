@@ -3,19 +3,13 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './index.css';
 import React from 'react';
-import { BrowserRouter as Router, Routes,Route,Link } from 'react-router-dom';
-import { Home } from './Component/Home';
-import { PostPage } from './Component/PostPage';
-import { Navbar } from './Component/Navbar';
+
+import { Home } from './Pages/Home';
+import { PostPage } from './Pages/PostPage';
+import { Navbar } from './Pages/Navbar';
 function App() { 
    return(
-     <Router>
-      <Navbar/>
-      <Routes>
-        <Route path='/' element={<Home/>}/>
-        <Route path='/postpage' element={<PostPage/>}/>
-      </Routes>
-     </Router>
+    <div>Hello</div>
    )
 }
 
