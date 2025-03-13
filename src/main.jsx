@@ -8,7 +8,7 @@ import { PostPage } from './Pages/PostPage.jsx'
 import { ErrorPage } from './Pages/Error.jsx'
 import { Navbar } from './Pages/Navbar.jsx'
 import {StudentInfo} from "./Pages/StudentInfo.jsx"
-
+import { ReadMore } from './Pages/Readmore.jsx'
 const router = createBrowserRouter([
   {
     path: '/',
